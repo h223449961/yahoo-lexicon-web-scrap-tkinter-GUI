@@ -3,13 +3,10 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import tkinter as tk
-import pandastable as pt
 def buton():
     erlabel.configure(text = '',font=(24))
     global df01
     df01 = pd.DataFrame(columns=["型態",'範例'])
-    global df02
-    df02 = pd.DataFrame(columns=["型態",'範例'])
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0',}
     sch = ''
     if myentry.get() != '':
@@ -73,7 +70,7 @@ def main():
     global myentry
     myentry = tk.Entry(root)
     myentry.pack()
-    mybutton = tk.Button(root, text='查詢', command=buton)
+    mybutton = tk.Button(root, text='查詢',font=(None,12, "bold"),fg="#eff2f3",bg='#24a0ed',command=buton)
     mybutton.pack()
     global erlabel
     erlabel = tk.Label(root, text='')
